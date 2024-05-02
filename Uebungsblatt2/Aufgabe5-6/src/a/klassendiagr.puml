@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Vehicle {
+int kennzeichen
+int anzahl
+public Vehicle()
+abstract double mietpreis()
+String toString()
+String getKennzeichen()
+String setKennzeichen()
+}
+
+Vehicle <|-- Car
+Vehicle <|-- Truck
+
+class Car {
+int sitzplaetze
+public Car()
+String mietpreis()
+String toString()
+int getSitzplaetze()
+void setSitzplaetze()
+}
+
+class Truck {
+int maxGew
+public Truck()
+double mietpreis()
+toString()
+getMaxGew()
+setMaxGew()
+}
+
+@enduml
