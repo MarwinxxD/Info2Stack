@@ -1,3 +1,5 @@
+package zwei;
+
 public class Main {
 	
 	static a a = new a();

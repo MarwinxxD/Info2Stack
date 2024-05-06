@@ -1,3 +1,5 @@
+package zwei;
+
 public class c {
 	public void cCount(String[] args)
 	{
@@ -11,6 +13,6 @@ public class c {
 			}
 		}
 		
-		System.out.println("Anzahl der c's = " + count);
+		System.out.println("Anzahl der acht.zwei.drei.c's = " + count);
 	}
 }

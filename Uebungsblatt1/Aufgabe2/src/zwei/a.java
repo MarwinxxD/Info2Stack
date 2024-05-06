@@ -1,3 +1,5 @@
+package zwei;
+
 public class a {
 	public void print(String[] args)
 	{

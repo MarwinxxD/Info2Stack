@@ -1,3 +1,5 @@
+package zehn;
+
 public class FreighterMain {
     public static void main(String[] args) {
         Freighter myFreighter = new Freighter(50000);

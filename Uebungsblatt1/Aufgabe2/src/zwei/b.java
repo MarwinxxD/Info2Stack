@@ -1,3 +1,5 @@
+package zwei;
+
 public class b {
 	public void printConnected(String[] args)
 	{

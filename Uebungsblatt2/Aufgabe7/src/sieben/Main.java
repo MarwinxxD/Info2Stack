@@ -1,3 +1,5 @@
+package sieben;
+
 public class Main {
 
     static a a = new a();

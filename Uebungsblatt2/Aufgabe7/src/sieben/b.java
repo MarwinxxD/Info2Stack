@@ -1,3 +1,5 @@
+package sieben;
+
 public class b {
     StringBuilder str1 = new StringBuilder("abc");
     StringBuilder str2 = new StringBuilder("a" + "bc");
@@ -9,7 +11,7 @@ public class b {
         String str3 = null;
 
         sb1.append("ab");
-        sb1.append("c");
+        sb1.append("acht.zwei.drei.c");
 
         System.out.println("str1: " + str1 + " str2: " + str2 + " sb1: " + sb1 + " sb2: " + sb2);
 

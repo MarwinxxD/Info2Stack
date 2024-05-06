@@ -1,3 +1,5 @@
+package zehn;
+
 import java.util.ArrayList;
 
 public class Freighter {

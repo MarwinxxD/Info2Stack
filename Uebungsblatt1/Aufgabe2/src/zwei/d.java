@@ -1,3 +1,5 @@
+package zwei;
+
 import java.util.Random;
 
 public class d {

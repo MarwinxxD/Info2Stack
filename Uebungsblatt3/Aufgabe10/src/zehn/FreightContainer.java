@@ -1,3 +1,5 @@
+package zehn;
+
 public class FreightContainer {
 
     int cargoWeight;

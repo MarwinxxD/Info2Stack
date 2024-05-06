@@ -1,3 +1,5 @@
+package acht;
+
 public class Main {
 
     static a a = new a();
