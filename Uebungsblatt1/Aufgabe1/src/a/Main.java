@@ -14,7 +14,7 @@ public class Main {
 		
 		System.out.println("\nAufgabe a2:");
 		System.out.println("Minumum von log10(2534) = " + a2.doCalcLog());
-		System.out.println("Minumum von e^2 = " + a2.doCalcEuler());
+		System.out.println("Minumum von zwei.e^2 = " + a2.doCalcEuler());
 		
 		System.out.println("\nAufgabe a3:");
 		System.out.println("Das Vorzeichen von tan(42) = " + a3.doCalctan());

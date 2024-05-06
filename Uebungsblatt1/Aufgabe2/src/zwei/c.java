@@ -13,6 +13,6 @@ public class c {
 			}
 		}
 		
-		System.out.println("Anzahl der c's = " + count);
+		System.out.println("Anzahl der acht.zwei.drei.c's = " + count);
 	}
 }
