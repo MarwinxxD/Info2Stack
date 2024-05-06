@@ -1,5 +1,3 @@
-package zwei;
-
 import java.util.Random;
 
 public class e {

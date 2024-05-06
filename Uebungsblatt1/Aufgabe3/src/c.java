@@ -1,5 +1,3 @@
-package drei;
-
 public class c {
 	public int arrayprod(int[] intarr)
 	{

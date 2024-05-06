@@ -1,5 +1,3 @@
-package sieben;
-
 public class b {
     StringBuilder str1 = new StringBuilder("abc");
     StringBuilder str2 = new StringBuilder("a" + "bc");

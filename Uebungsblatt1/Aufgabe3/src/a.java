@@ -1,5 +1,3 @@
-package drei;
-
 public class a {
 	public String myToLowerCase(String s)
 	{

@@ -1,5 +1,3 @@
-package sieben;
-
 public class a {
     public StringBuilder deleteFromString(StringBuilder text, StringBuilder key, int delete) {
         String temp = null;

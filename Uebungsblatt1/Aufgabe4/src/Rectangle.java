@@ -1,5 +1,3 @@
-package vier;
-
 public class Rectangle {
 
 	int höhe;

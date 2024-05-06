@@ -1,5 +1,3 @@
-package zwei;
-
 public class c {
 	public void cCount(String[] args)
 	{

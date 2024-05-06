@@ -1,5 +1,3 @@
-package drei;
-
 import java.util.Scanner;
 
 public class d {
