@@ -37,6 +37,9 @@ public class Fraction extends Number implements Comparable<Fraction> {
 
     @Override
     public int compareTo(Fraction o) {
-        return this.numerator.compareTo(o.numerator);
+        if (this.denominator.compareTo(o.denominator) == 0) {
+            return this.numerator.compareTo(o.numerator);
+        }
+        return -2;
     }
 }

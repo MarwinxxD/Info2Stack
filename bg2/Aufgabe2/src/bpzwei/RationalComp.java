@@ -16,12 +16,14 @@ public class RationalComp {
         Fraction fract2 = new Fraction(scan.nextInt(), scan.nextInt());
         System.out.println("Es wurde " + fract2.toString() + " eingegeben.");
 
-        if (fract1.compareTo(fract2) > 0) {
+        if (fract1.compareTo(fract2) == 1) {
             System.out.print(fract1.toString() + " ist groesser");
-        } else if (fract1.compareTo(fract2) < 0) {
+        } else if (fract1.compareTo(fract2) == -1) {
             System.out.print(fract2.toString() + " ist groesser");
+        } else if (fract1.compareTo(fract2) == 0){
+            System.out.print(fract1.toString() + " und " + fract2.toString() + " sind gleich gross");
         } else {
-            System.out.print(fract1.toString() + " und " +fract2.toString() + " sind gleich gross");
+            System.out.print("Nenner ist nicht gleich");
         }
 
 
