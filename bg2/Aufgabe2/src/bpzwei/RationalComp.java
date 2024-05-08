@@ -8,22 +8,20 @@ public class RationalComp {
 
         System.out.print("Bitte gib zwei ganze Zahlen ein: ");
 
-        Fraction fract1 = new Fraction(scan.nextInt(), scan.nextInt());
-        System.out.println("Es wurde " + fract1.toString() + " eingegeben.");
+        Fraction fract1 = new Fraction(new IntegerNumber(scan.nextInt()), new IntegerNumber(scan.nextInt()));
+        System.out.println("Es wurde " + fract1 + " eingegeben.");
 
         System.out.print("Bitte gib zwei ganze Zahlen ein: ");
 
-        Fraction fract2 = new Fraction(scan.nextInt(), scan.nextInt());
-        System.out.println("Es wurde " + fract2.toString() + " eingegeben.");
+        Fraction fract2 = new Fraction(new IntegerNumber(scan.nextInt()), new IntegerNumber(scan.nextInt()));
+        System.out.println("Es wurde " + fract2 + " eingegeben.");
 
-        if (fract1.compareTo(fract2) == 1) {
-            System.out.print(fract1.toString() + " ist groesser");
-        } else if (fract1.compareTo(fract2) == -1) {
-            System.out.print(fract2.toString() + " ist groesser");
+        if (fract1.compareTo(fract2) > 0) {
+            System.out.print(fract1 + " ist groesser");
+        } else if (fract1.compareTo(fract2) < 0) {
+            System.out.print(fract2 + " ist groesser");
         } else if (fract1.compareTo(fract2) == 0){
-            System.out.print(fract1.toString() + " und " + fract2.toString() + " sind gleich gross");
-        } else {
-            System.out.print("Nenner ist nicht gleich");
+            System.out.print(fract1 + " und " + fract2 + " sind gleich gross");
         }
 
 
