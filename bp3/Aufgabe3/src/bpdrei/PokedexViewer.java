@@ -23,18 +23,7 @@ public class PokedexViewer {
 		});
 		System.out.println(headerLine);
 
-		for (int i = 0; i < dex.size(); i++) {
-			for (int j = i + 1; j < dex.size(); j++) {
-
-				// to compare one string with other strings
-				if (dex.get(i).compareTo(dex.get(j)) > 0) {
-					// swapping
-					temp = dex.get(i);
-					dex.set(i, dex.get(j));
-					dex.set(j, temp);
-				}
-			}
-		}
+		dex.sort(Pokemon::compareTo);
 
 		System.out.println("\n\n");
 
