@@ -42,11 +42,11 @@ public class RationalComp {
             System.out.println("Die Zahl ist positiv");
         } else {
             System.out.println("Die Zahl ist nicht positiv");
-        }*/
+        }
 
-        /*System.out.print("Bitte gib zwei ganze Zahlen ein: ");
+        System.out.print("Bitte gib zwei ganze Zahlen ein: ");
 
-        Fraction fract = new Fraction(scan.nextInt(), scan.nextInt());
+        Fraction fract = new Fraction(new IntegerNumber(scan.nextInt()), new IntegerNumber(scan.nextInt()));
         System.out.println("Es wurde " + fract.toString() + " eingegeben.");
 
         if(fract.isZero()) {

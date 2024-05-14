@@ -10,10 +10,10 @@ public class Fraction extends Number implements Comparable<Fraction> {
         denominator = new IntegerNumber(1);
     }
 
-    public Fraction(IntegerNumber numerator, IntegerNumber denominator){
+    public Fraction(IntegerNumber numerator, IntegerNumber denominator) {
         this.numerator = numerator;
-        if(!(denominator.isPositive())) {
-            System.exit(0);
+        if (!(denominator.isPositive())) {
+            System.exit(1);
         }
         this.denominator = denominator;
     }
