@@ -1,9 +1,12 @@
 package bpdrei;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class PokedexViewer {
 
 	public static void main(String[] args) {
+		Stream<Pokemon> streamdex = Pokedex.stream();
+
 		String tableHeader = fillForTable("Name") + fillForTable("Typ 1")
 				+ fillForTable("Typ 2");
 
@@ -19,11 +22,12 @@ public class PokedexViewer {
 			System.out.println(fillForTable(mon.name) + fillForTable(mon.type1)
 					+ (mon.type2 == null ? fillForTable("") : fillForTable(mon.type2)));
 		});
+
 		System.out.println(headerLine);
 
 		dex.sort(Pokemon::compareTo);
 
-		System.out.println("\n\n");
+		System.out.println("\n" + "--------------------------------------------------- Alphabetical order" + "\n");
 
 		System.out.println(tableHeader);
 
@@ -33,7 +37,26 @@ public class PokedexViewer {
 			System.out.println(fillForTable(mon.name) + fillForTable(mon.type1)
 					+ (mon.type2 == null ? fillForTable("") : fillForTable(mon.type2)));
 		});
+
 		System.out.println(headerLine);
+
+		System.out.println("\n" + "--------------------------------------------------- only Gen one Pokes (and no Megas)" + "\n");
+
+		streamdex.forEach(streamdex.);
+
+		System.out.println("Die Anzahl aller Pokemon in den Gen 1 one Games = ");
+
+		System.out.println("\n" + "--------------------------------------------------- Ten highest Defence values" + "\n");
+
+
+
+		System.out.println("\n" + "--------------------------------------------------- only Gen one Pokes (and no Megas)" + "\n");
+
+
+
+		System.out.println("\n" + "--------------------------------------------------- only Gen one Pokes (and no Megas)" + "\n");
+
+
 	}
 
 	
