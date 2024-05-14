@@ -99,5 +99,6 @@ public class Pokemon implements Comparable<Pokemon> {
     @Override
     public int compareTo(Pokemon o) {
         return this.name.toLowerCase().compareTo(o.toString().toLowerCase());
+        //wenn man hier this.xyz und o.xyz umdreht bekommen man eine andersrum sortierte Liste
     }
 }

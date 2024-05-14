@@ -4,7 +4,6 @@ import java.util.List;
 public class PokedexViewer {
 
 	public static void main(String[] args) {
-
 		String tableHeader = fillForTable("Name") + fillForTable("Typ 1")
 				+ fillForTable("Typ 2");
 
