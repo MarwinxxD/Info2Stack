@@ -3,7 +3,7 @@ package bpdrei;
 /**
  * Repräsentiert ein Pokémon.
  */
-public class Pokemon {
+public class Pokemon implements Comparable<Pokemon> {
     
     /**
      * Die Pokédex-Nummer.
@@ -96,4 +96,8 @@ public class Pokemon {
         
     }
 
+    @Override
+    public int compareTo(Pokemon o) {
+        return this.name.toLowerCase().compareTo(o.toString().toLowerCase());
+    }
 }

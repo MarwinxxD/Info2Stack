@@ -1,15 +1,18 @@
 package bpdrei;
-
-import java.util.Comparator;
 import java.util.List;
 
 public class PokedexViewer {
 
 	public static void main(String[] args) {
+		Pokemon temp;
+
 		String tableHeader = fillForTable("Name") + fillForTable("Typ 1")
 				+ fillForTable("Typ 2");
+
 		String headerLine = "--------------+---------------+---------------+ ";
+
 		System.out.println(tableHeader);
+
 		System.out.println(headerLine);
 
 		List<Pokemon> dex = Pokedex.list();
@@ -20,7 +23,30 @@ public class PokedexViewer {
 		});
 		System.out.println(headerLine);
 
-		//dex.sort(Comparator<Pokemon> );
+		for (int i = 0; i < dex.size(); i++) {
+			for (int j = i + 1; j < dex.size(); j++) {
+
+				// to compare one string with other strings
+				if (dex.get(i).compareTo(dex.get(j)) > 0) {
+					// swapping
+					temp = dex.get(i);
+					dex.set(i, dex.get(j));
+					dex.set(j, temp);
+				}
+			}
+		}
+
+		System.out.println("\n\n");
+
+		System.out.println(tableHeader);
+
+		System.out.println(headerLine);
+
+		dex.forEach((Pokemon mon) -> {
+			System.out.println(fillForTable(mon.name) + fillForTable(mon.type1)
+					+ (mon.type2 == null ? fillForTable("") : fillForTable(mon.type2)));
+		});
+		System.out.println(headerLine);
 	}
 
 	

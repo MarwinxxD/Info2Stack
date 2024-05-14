@@ -840,5 +840,4 @@ public class Pokedex {
         
     }
 
-
 }
