@@ -1,12 +1,9 @@
 package bpdrei;
 
-import java.util.function.Predicate;
-import java.util.stream.Stream;
-
 /**
  * Repräsentiert ein Pokémon.
  */
-public class Pokemon implements Comparable<Pokemon> {
+public class Pokemon {
     
     /**
      * Die Pokédex-Nummer.
@@ -68,10 +65,7 @@ public class Pokemon implements Comparable<Pokemon> {
      */
     final boolean legendary;
 
-    private Predicate<Pokemon> test = mon -> { return mon.number <= 151 && mon.number >= 1 && !(mon.name.contains("Mega"));};
 
-    Stream<Pokemon> teststream;
-    
     /**
      * Erzeugt ein neues Pokémon.
      */
@@ -100,15 +94,5 @@ public class Pokemon implements Comparable<Pokemon> {
         // Ein Pokemon-Objekt wird als String durch seinen Namen repräsentiert.
         return this.name;
         
-    }
-
-    @Override
-    public int compareTo(Pokemon o) {
-        return this.name.toLowerCase().compareTo(o.toString().toLowerCase());
-        //wenn man hier this.xyz und o.xyz umdreht bekommen man eine andersrum sortierte Liste
-    }
-
-    public Stream<Pokemon> filter(Stream<Pokemon> dex) {
-        return dex.filter(test);
     }
 }
