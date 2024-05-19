@@ -5,6 +5,7 @@ public class Main {
     static MyVector v2 = new MyVector();
 
     static MyMatrix matrix = new MyMatrix();
+    static MyMatrix2 matrix2 = new MyMatrix2();
 
     public static void main(String[] args) {
         System.out.println("der Vector v1 ist:");
@@ -40,5 +41,17 @@ public class Main {
         System.out.println();
         System.out.println("die Matrix multipliziert mit v2 ist:");
         matrix.mult(v2).printVector();
+
+        System.out.println();
+        System.out.println();
+        System.out.println("die eindimensionale Matrix ist:");
+        matrix2.randomEntry();
+        matrix2.printMatrix();
+        System.out.println();
+        System.out.println("die eindimensionale Matrix multipliziert mit v1 ist:");
+        matrix2.mult(v1).printVector();
+        System.out.println();
+        System.out.println("die eindimensionale Matrix multipliziert mit v2 ist:");
+        matrix2.mult(v2).printVector();
     }
 }
