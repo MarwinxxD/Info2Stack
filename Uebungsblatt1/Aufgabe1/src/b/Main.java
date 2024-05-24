@@ -23,7 +23,7 @@ public class Main {
 		System.out.println("100 mal ha: " + b4.ha100().toString());
 		
 		System.out.println("\nAufgabe b5:");
-		System.out.println("Informatik mit a an jeder zweiten Stelle: " + b5.fill());
+		System.out.println("Informatik mit sieben.acht.zwei.drei.a an jeder zweiten Stelle: " + b5.fill());
 		
 		System.out.println("\nAufgabe b6:");
 		System.out.println("Scanner: " + b6.scan());
