@@ -38,7 +38,7 @@ public class B {
     }
 
     //Scanner und Random unterscheiden sich darin, dass Random nur java.util.Random@ und ein Nummer printed,
-    //während Scanner noch eine einige Eingenschaften, wie eine aktuelle Position, einen delimited, usw. printed
+    //während Scanner noch einige Eingenschaften, wie eine aktuelle Position, einen delimited, usw. printed
 
 
 }
