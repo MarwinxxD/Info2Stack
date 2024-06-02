@@ -14,12 +14,11 @@ public class StringSupplier implements Supplier<String> {
 
     @Override
     public String get() {
-        String ret = "";
+        StringBuilder ret = new StringBuilder();
 
         for(int i = 0; i < rand.nextInt(length + 1); i++) {
-            ret = ret.concat(String.valueOf((char) (rand.nextInt(95) + 32)));
-            //es steht nirgends, dass wir das mit nem StringBuilder machen müssen.
+            ret.appendCodePoint(rand.nextInt(95) + 32);
         }
-        return ret;
+        return ret.toString();
     }
 }
