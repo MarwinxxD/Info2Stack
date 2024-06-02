@@ -13,14 +13,15 @@ public class A {
 
     public static void main(String[] args) {
 
+
         for (int i = 0; i < 5; i++) {
-            int rand = new Random().nextInt(10);
+            Integer rand = new Random().nextInt(10);
 
             firstCollection.add(rand);
         }
 
         for (int i = 0; i < 20; i++) {
-            int rand = new Random().nextInt(10);
+            Integer rand = new Random().nextInt(10);
 
             secondCollection.add(rand);
         }
@@ -31,6 +32,4 @@ public class A {
             System.out.println("secondCollection enthaelt nicht alle Elemente von firstCollection");
         }
     }
-
-
 }
