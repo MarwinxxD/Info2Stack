@@ -28,8 +28,9 @@ public class B {
             Object o = it.next();
             if(o.getClass() == LocalDate.class) {
                 System.out.println(((LocalDate) o).minusWeeks(2));
-            } else if (o instanceof CharSequence oo) {
-                 System.out.println((oo.charAt(0) + "" +  (oo.charAt((oo.length() - 1)))));
+            } else if (o instanceof CharSequence) {
+                 o = (CharSequence) o;
+                 System.out.println(((CharSequence) o).charAt(0) + "" +  ((CharSequence) o).charAt(((CharSequence) o).length() - 1));
             } else {
                 System.out.println(o);
             }

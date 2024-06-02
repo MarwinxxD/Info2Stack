@@ -13,6 +13,7 @@ public class A {
 
     public static void main(String[] args) {
 
+
         for (int i = 0; i < 5; i++) {
             Integer rand = new Random().nextInt(10);
 
@@ -31,6 +32,4 @@ public class A {
             System.out.println("secondCollection enthaelt nicht alle Elemente von firstCollection");
         }
     }
-
-
 }

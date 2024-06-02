@@ -20,6 +20,10 @@ public class GradeTracker {
     double calculateAverageGrade(int enrolmentNumber) {
         double average = 0;
 
+        if(grades.get(enrolmentNumber).isEmpty()) {
+            return -1;
+        }
+
         for (int i = 0; i < grades.get(enrolmentNumber).size(); i++) {
             average += grades.get(enrolmentNumber).get(i);
         }
@@ -33,9 +37,15 @@ public class GradeTracker {
         Iterator<Integer> it= grades.keySet().iterator();
 
         while (it.hasNext()) {
-            average += calculateAverageGrade(it.next());
+            double next = calculateAverageGrade(it.next());
+            if(next != -1) {
+                average += next;
+            }
         }
 
+        if(average == 0) {
+            return -1;
+        }
         return average / grades.size();
     }
 }
