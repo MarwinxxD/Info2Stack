@@ -13,6 +13,6 @@ public class Rechner {
     }
 
     public double rechnen () {
-
+        return 0;
     }
 }
