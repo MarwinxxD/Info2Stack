@@ -3,6 +3,10 @@ package bpfuenf;
 import javax.swing.*;
 
 public class LotteryButton extends JButton {
+    private static final int DISTANCE_BETWEEN_BUTTONS_X = 80;
+    private static final int DISTANCE_BETWEEN_BUTTONS_Y = 25;
+    private static final int DISTANCE_FROM_LEFT = 15;
+    private static final int DISTANCE_FROM_TOP = 40;
     private final int number;
 
     private boolean chosen = false;
@@ -10,10 +14,10 @@ public class LotteryButton extends JButton {
     public LotteryButton(int number) {
         this.number = number;
 
-        int posX = ((number - 1) % 7) * 80;
-        int posY = (((number - 1) / 7) + 1) * 25;
+        int posX = ((number - 1) % 7) * DISTANCE_BETWEEN_BUTTONS_X;
+        int posY = (((number - 1) / 7)) * DISTANCE_BETWEEN_BUTTONS_Y;
 
-        setBounds(posX + 15, posY + 10, 75, 20);
+        setBounds(posX + DISTANCE_FROM_LEFT, posY + DISTANCE_FROM_TOP, 75, 20);
 
         setText(String.valueOf(number));
     }

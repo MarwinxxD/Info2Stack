@@ -47,12 +47,14 @@ public class LottoGUI extends JFrame {
         statusField = new JTextField();
         statusField.setEditable(false);
         statusField.setBounds(0, 220, 600, 40);
+        add(statusField);
 
         /*add(playButton, BorderLayout.NORTH);
         add(panel, BorderLayout.CENTER);
         add(statusField, BorderLayout.SOUTH);*/
 
         setSize(600, 300);
+        setLayout(null);
         setVisible(true);
     }
 
@@ -96,6 +98,7 @@ public class LottoGUI extends JFrame {
     public void playLottery(int[] inputs) {
         if (inputs.length != MAX_CHOICES) {
             statusField.setText("Invalid number of choices");
+            return;
         }
 
         int correct = 0;
