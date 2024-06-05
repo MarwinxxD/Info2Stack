@@ -1,47 +1,35 @@
 package neunzehn;
 
-import java.util.Scanner;
-import java.util.regex.Pattern;
-
 public class Rechner {
-    double x;
-    double y;
-    char operator;
 
-    Pattern p = Pattern.compile("[\\x2B\\x2D\\x2A\\x2F]");
+    public void rechnen(String str) throws NumberFormatException, IllegalArgumentException{
+        int x, y;
 
-    public void setX(String x) throws NumberFormatException {
+        String[] erg = str.split("[\\x2B\\x2D\\x2A\\x2F]");
+
+        if (erg.length > 3) {
+            throw new IllegalArgumentException("Zu viele Inputs");
+        } else if (erg.length < 3) {
+            throw new IllegalArgumentException("Zu wenige Inputs");
+        }
+
+        if(erg[0].matches("[\\x2B\\x2D\\x2A\\x2F]")
+                || erg[2].matches("[\\x2B\\x2D\\x2A\\x2F]")) {
+            throw new IllegalArgumentException("Zu viele Operatoren");
+        }
+
         try {
-            this.x = Double.parseDouble(x);
-        } catch (Exception e) {
-            throw new NumberFormatException("First Number is faulty");
+            x = Integer.parseInt(erg[0]);
+            y = Integer.parseInt(erg[2]);
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("Die erste und/oder zweite Zahl ist illegal");
         }
-    }
 
-    public void setY(String y) throws NumberFormatException {
-        try {
-            this.y  = Double.parseDouble(y);
-        } catch (Exception e) {
-            throw new NumberFormatException("Second Number is faulty");
-        }
-    }
-
-    public void setOperator(String operator) throws IllegalArgumentException {
-        if (operator.length() < 2 &&
-                (operator.charAt(0) == '+' || operator.charAt(0) == '-'
-                        || operator.charAt(0) == '*' || operator.charAt(0) == '/')) {
-            this.operator = operator.charAt(0);
-        } else {
-            throw new IllegalArgumentException("Der Operator ist nicht Valide");
-        }
-    }
-
-    public void rechnen () {
-        if(operator == '+') {
+        if(erg[1].charAt(0) == '+') {
             System.out.println("= " + x + y);
-        } else if (operator == '-') {
+        } else if (erg[1].charAt(0) == '-') {
             System.out.println("= " +  - y);
-        } else if (operator == '*') {
+        } else if (erg[1].charAt(0) == '*') {
             System.out.println("= " + x * y);
         }
         System.out.println("= " + x / y);

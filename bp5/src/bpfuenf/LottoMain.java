@@ -1,9 +1,6 @@
 package bpfuenf;
 
-import javax.swing.*;
-
-public class LottoMain extends JFrame {
-
+public class LottoMain {
     public static void main(String[] args) {
         new LottoGUI();
     }
