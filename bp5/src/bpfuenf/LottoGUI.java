@@ -59,7 +59,6 @@ public class LottoGUI extends JFrame {
         if(!inputs.contains(x)) {
             inputs.add(x);
         } else {
-            System.out.println(inputs);
             inputs.remove((Integer) x);
 
         }
