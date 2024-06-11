@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class LuggageContainer implements Iterable<Luggage> {
-    LinkedList<Luggage> luggages = new LinkedList<>();
+    private LinkedList<Luggage> luggages = new LinkedList<>();
 
     void addLuggage(Luggage l) {
         luggages.add(l);

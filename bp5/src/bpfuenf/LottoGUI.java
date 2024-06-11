@@ -3,6 +3,7 @@ package bpfuenf;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -19,6 +20,9 @@ public class LottoGUI extends JFrame {
     public LottoGUI() {
         setTitle("Lotto 6 aus 49");
 
+        /*JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(7, 7));*/
+
         for (int i = 0; i < 49; i++) {
             LotteryButton a = new LotteryButton(i + 1);
             a.addActionListener(new ActionListener() {
@@ -28,6 +32,7 @@ public class LottoGUI extends JFrame {
             });
             lotteryButtons[i] = a;
             add(a);
+            //panel.add(a);
         }
 
         JButton playButton = new JButton("PLAY!");
@@ -42,9 +47,11 @@ public class LottoGUI extends JFrame {
         statusField = new JTextField();
         statusField.setEditable(false);
         statusField.setBounds(0, 220, 600, 40);
+        add(statusField);
 
-        add(playButton, BorderLayout.NORTH);
-        add(statusField, BorderLayout.SOUTH);
+        /*add(playButton, BorderLayout.NORTH);
+        add(panel, BorderLayout.CENTER);
+        add(statusField, BorderLayout.SOUTH);*/
 
         setSize(600, 300);
         setLayout(null);
@@ -59,7 +66,6 @@ public class LottoGUI extends JFrame {
         if(!inputs.contains(x)) {
             inputs.add(x);
         } else {
-            System.out.println(inputs);
             inputs.remove((Integer) x);
 
         }
@@ -92,6 +98,7 @@ public class LottoGUI extends JFrame {
     public void playLottery(int[] inputs) {
         if (inputs.length != MAX_CHOICES) {
             statusField.setText("Invalid number of choices");
+            return;
         }
 
         int correct = 0;
@@ -101,8 +108,12 @@ public class LottoGUI extends JFrame {
         int[] lottonumbers = new int[MAX_CHOICES];
 
         for (int i = 0; i < MAX_CHOICES; i++) {
-            rand = new Random().nextInt(50);
-            lottonumbers[i] = rand;
+            rand = new Random().nextInt(1,50);
+            if (Arrays.asList(lottonumbers).contains(rand)) {
+                i--;
+            } else {
+                lottonumbers[i] = rand;
+            }
         }
 
         for (int i = 0; i < MAX_CHOICES; i++) {

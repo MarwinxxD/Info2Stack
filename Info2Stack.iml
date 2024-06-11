@@ -25,6 +25,8 @@
       <sourceFolder url="file://$MODULE_DIR$/bp5/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt5/Aufgabe18/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt5/Aufgabe19/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt5/Aufgabe20/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bp6/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
