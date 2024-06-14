@@ -1,7 +1,6 @@
 package einundzwazig;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class C extends JFrame {
 
