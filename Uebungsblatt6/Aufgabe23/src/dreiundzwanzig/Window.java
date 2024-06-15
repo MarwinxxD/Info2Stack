@@ -1,67 +1,75 @@
 package dreiundzwanzig;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.WindowListener;
 import java.awt.event.*;
 
 public class Window extends JFrame {
+
+    private JTextArea area = new JTextArea(5, 50);
+
     public Window() {
-        setTitle("Window Event Log");
-
+        super("Window Event Log");
         setSize(500, 500);
+        setLocationRelativeTo(null);
 
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_X) {
-                    System.exit(0);
-                }
-            }
-        });
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
-        JTextArea area = new JTextArea(5, 50);
+        JScrollPane scroll = new JScrollPane(area);
+        add(scroll, BorderLayout.CENTER);
+
         area.setEditable(false);
-        JScrollPane scrollThing = new JScrollPane(area);
-        add(scrollThing);
+        area.setFocusable(false);
 
         addWindowListener(new WindowListener() {
             @Override
-            public void windowOpened(WindowEvent e) {
-                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window opened\n");
-            }
-
-            @Override
-            public void windowClosing(WindowEvent e) {
-                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window closing\n");
-                JOptionPane.showMessageDialog(null, "Hit the ’X’ key to close the application!");
-            }
-
-            @Override
-            public void windowClosed(WindowEvent e) {
+            public void windowOpened(java.awt.event.WindowEvent e) {
                 area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window closed\n");
             }
 
             @Override
-            public void windowIconified(WindowEvent e) {
-                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window iconified\n");
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window closed\n");
+                JOptionPane.showMessageDialog(null, "Hit the 'x' key to close the application!");
             }
 
             @Override
-            public void windowDeiconified(WindowEvent e) {
-                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window deiconified\n");
+            public void windowClosed(java.awt.event.WindowEvent e) {
+                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window closed\n");
             }
 
             @Override
-            public void windowActivated(WindowEvent e) {
-                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window activated\n");
+            public void windowIconified(java.awt.event.WindowEvent e) {
+                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window closed\n");
             }
 
             @Override
-            public void windowDeactivated(WindowEvent e) {
-                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window deactivated\n");
+            public void windowDeiconified(java.awt.event.WindowEvent e) {
+                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window closed\n");
+            }
+
+            @Override
+            public void windowActivated(java.awt.event.WindowEvent e) {
+                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window closed\n");
+            }
+
+            @Override
+            public void windowDeactivated(java.awt.event.WindowEvent e) {
+                area.append(java.time.LocalDate.now() + " " + java.time.LocalTime.now() + " Window closed\n");
             }
         });
 
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addKeyListener(new KeyAdapter() {
+                           public void keyPressed(KeyEvent e) {
+                               if (e.getKeyCode() == KeyEvent.VK_X) {
+                                   System.exit(0);
+                               }
+                           }
+                       }
+        );
+        setFocusable(true);
+
 
         setVisible(true);
     }
