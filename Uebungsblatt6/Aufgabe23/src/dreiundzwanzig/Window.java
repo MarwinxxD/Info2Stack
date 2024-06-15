@@ -6,9 +6,6 @@ import java.awt.event.WindowListener;
 import java.awt.event.*;
 
 public class Window extends JFrame {
-
-    private JTextArea area = new JTextArea(5, 50);
-
     public Window() {
         super("Window Event Log");
         setSize(500, 500);
@@ -16,6 +13,7 @@ public class Window extends JFrame {
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
+        JTextArea area = new JTextArea(5, 50);
         JScrollPane scroll = new JScrollPane(area);
         add(scroll, BorderLayout.CENTER);
 
