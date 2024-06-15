@@ -1,39 +1,79 @@
 package vierundzwanzig;
 
 import javax.swing.*;
-import javax.swing.event.MouseInputAdapter;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class A extends JFrame {
+public class A extends JPanel {
+    JFrame frame = new JFrame();
+
+    private Point start;
+    private Point ende;
+    private Rectangle currRect;
 
     public A() {
-        setTitle("Rechteck");
+        setPreferredSize(new Dimension(500, 500));
+        setBackground(Color.WHITE);
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        setSize(500, 500);
-
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
-        JLabel rectangle = new JLabel("Rechteck");
-        rectangle.addMouseListener(new MouseInputAdapter() {
+        MouseAdapter mouseListen = new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                rectangle.setLocation(e.getX(), e.getY());
-                add(rectangle);
+                start = e.getPoint();
+                ende = start;
+                currRect = null;
+                repaint();
             }
 
             @Override
             public void mouseDragged(MouseEvent e) {
-                rectangle.setSize(e.getX(), e.getY());
-                add(rectangle);
+                ende = e.getPoint();
+                calculateRectangle();
+                repaint();
             }
-        });
 
-        setVisible(true);
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                ende = e.getPoint();
+                calculateRectangle();
+                repaint();
+            }
+
+            private void calculateRectangle() {
+                int x = Math.min(start.x, ende.x);
+                int y = Math.min(start.y, ende.y);
+                int width = Math.abs(start.x - ende.x);
+                int height = Math.abs(start.y - ende.y);
+                currRect = new Rectangle(x, y, width, height);
+            }
+        };
+
+        this.addMouseListener(mouseListen);
+        this.addMouseMotionListener(mouseListen);
+
+        frame.setTitle("Rechteck");
+
+        frame.setSize(500, 500);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(this);
+
+        frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new A();
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (currRect != null) {
+            g.setColor(Color.BLACK);
+            g.drawRect(currRect.x, currRect.y, currRect.width, currRect.height);
+            g.setColor(Color.GREEN);
+            g.drawString("Breite: " + currRect.width,
+                    currRect.x + currRect.width / 2 - 20,
+                    currRect.y - 5);
+            g.drawString("Höhe: " + currRect.height,
+                    currRect.x + currRect.width + 5,
+                    currRect.y + currRect.height / 2);
+        }
     }
 }
