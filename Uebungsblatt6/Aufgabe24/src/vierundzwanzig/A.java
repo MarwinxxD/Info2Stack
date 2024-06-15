@@ -6,8 +6,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class A extends JPanel {
-    JFrame frame = new JFrame();
-
     private Point start;
     private Point ende;
     private Rectangle currRect;
@@ -50,15 +48,6 @@ public class A extends JPanel {
 
         this.addMouseListener(mouseListen);
         this.addMouseMotionListener(mouseListen);
-
-        frame.setTitle("Rechteck");
-
-        frame.setSize(500, 500);
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(this);
-
-        frame.setVisible(true);
     }
 
     @Override
