@@ -61,13 +61,13 @@ public class Window extends JFrame {
         });
 
         addKeyListener(new KeyAdapter() {
-                           public void keyPressed(KeyEvent e) {
-                               if (e.getKeyCode() == KeyEvent.VK_X) {
-                                   System.exit(0);
-                               }
-                           }
-                       }
-        );
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_X) {
+                    System.exit(0);
+                }
+            }
+        });
+
         setFocusable(true);
 
 
