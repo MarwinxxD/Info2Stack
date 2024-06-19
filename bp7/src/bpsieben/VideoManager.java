@@ -1,6 +1,7 @@
 package bpsieben;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -10,6 +11,16 @@ public class VideoManager {
     public VideoManager() {}
 
     public void addVideo(Video v) throws NullPointerException, IllegalArgumentException {
+        /*Iterator<Video> it = queue.iterator();
+        boolean found = false;
+
+        while (it.hasNext()) {
+            Video v2 = it.next();
+            if (v2.getTitle().equalsIgnoreCase(v.getTitle())) {
+                found = true;
+            }
+        }*/
+
         if (v == null) {
             throw new NullPointerException("Video is non existant");
         } else {

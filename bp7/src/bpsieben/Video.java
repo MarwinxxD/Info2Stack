@@ -13,7 +13,7 @@ public abstract class Video {
             setTitle(title);
             setScore(score);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("baaah");
         }
 
     }

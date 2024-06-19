@@ -7,6 +7,6 @@ public class Series extends Video {
 
     @Override
     public String toString() {
-        return "<Series>" + super.toString();
+        return "<" + this.getClass().getSimpleName() + "> " + super.toString();
     }
 }

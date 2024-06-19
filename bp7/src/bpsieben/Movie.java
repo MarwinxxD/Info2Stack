@@ -7,6 +7,6 @@ public class Movie extends Video {
 
     @Override
     public String toString() {
-        return "<Movie>" + super.toString();
+        return "<" + this.getClass().getSimpleName() + "> " + super.toString();
     }
 }
