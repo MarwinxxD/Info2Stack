@@ -41,7 +41,7 @@ public class VideoTesterApp {
 
         // Versuch, ein gültiges Videos nochmals hinzuzufügen
         try {
-            Series mrRobot = new Series("mr. robot", 9.2);
+            Series mrRobot = new Series("mr. robot", 8.2);
             manager.addVideo(mrRobot);
             System.err.println("Video " + mrRobot.toString() + " konnte doppelt hinzugefügt "
                     + "werden.");

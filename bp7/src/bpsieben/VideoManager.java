@@ -1,22 +1,20 @@
 package bpsieben;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class VideoManager {
-    private final PriorityQueue<Video> queue = new PriorityQueue<>(new VideoComparator());
+    private final PriorityQueue<Video> queue;
 
-    public VideoManager() {}
+    public VideoManager() {
+        queue = new PriorityQueue<>(new VideoComparator());
+    }
 
-    public void addVideo(Video v) throws NullPointerException, IllegalArgumentException {
-        /*Iterator<Video> it = queue.iterator();
-        boolean found = false;
+    public void addVideo(Video v) {
+        /*boolean found = false;
+        Iterator<Video> it = queue.iterator();
 
-        while (it.hasNext()) {
-            Video v2 = it.next();
-            if (v2.getTitle().equalsIgnoreCase(v.getTitle())) {
+        while(it.hasNext()) {
+            if(v.getTitle().equalsIgnoreCase(it.next().getTitle())) {
                 found = true;
             }
         }*/
@@ -40,5 +38,9 @@ public class VideoManager {
         List<Video> myList = new ArrayList<>(queue);
         myList.sort(queue.comparator());
         return myList.toArray(new Video[myList.size()]);
+
+        /*Video[] retList = new Video[queue.size()];
+        Arrays.sort(retList, queue.comparator());
+        return retList;*/
     }
 }
