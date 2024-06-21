@@ -2,6 +2,7 @@ package gui;
 
 import data.Car;
 import data.CarContainer;
+import data.CarException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -29,6 +30,21 @@ public class CarWindow extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setVisible(true);
+    }
+
+    public void setCurrentCar(int seats, String plate) throws CarException {
+        if (carComboBox.getSelectedItem() instanceof Car c) {
+            try {
+                c.setNumberOfSeats(seats);
+                c.setLicensePlate(plate);
+                System.out.println(plate);
+                System.out.println(seats);
+                carComboBox.setSelectedItem(c);
+                carComboBox.updateUI();
+            } catch (CarException e) {
+                throw new CarException("the number of seats is invalid");
+            }
+        }
     }
 
     @Override
