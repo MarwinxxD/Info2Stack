@@ -1,4 +1,4 @@
-package sechsundzwanzig;
+package siebensundzwanzig;
 
 public enum Genre {
     COMEDY,

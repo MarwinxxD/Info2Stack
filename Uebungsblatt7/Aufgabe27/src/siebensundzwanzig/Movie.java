@@ -1,4 +1,4 @@
-package sechsundzwanzig;
+package siebensundzwanzig;
 
 import java.util.Optional;
 
