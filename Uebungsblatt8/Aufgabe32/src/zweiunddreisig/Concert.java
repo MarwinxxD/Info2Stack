@@ -3,8 +3,8 @@ package zweiunddreisig;
 /*import java.util.ArrayList;
 
 public class Concert {
-    Venue venue;
-    ArrayList<Artist> artists = new ArrayList<>();
+    private Venue venue;
+    private ArrayList<Artist> artists = new ArrayList<>();
 
     public void linkVanue(Venue venue) {
         this.venue = venue;
@@ -19,7 +19,9 @@ public class Concert {
     }
 
     public void unlinkArtist(Artist artist) throws ConcertException {
-        artists.remove(artist);
+        if (!artists.remove(artist)) {
+            throw new ConcertException("There are no invited Artists");
+        }
     }
 
     public ArrayList<Artist> getlinkArtists() {
