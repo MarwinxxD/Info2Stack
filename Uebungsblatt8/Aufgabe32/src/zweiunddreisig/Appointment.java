@@ -1,6 +1,6 @@
 package zweiunddreisig;
 
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Appointment {
@@ -50,4 +50,8 @@ public class Appointment {
     public ArrayList<Doctor> getlinkDoctors() {
         return doctors;
     }
+}*/
+
+public class Appointment {
+
 }
