@@ -1,6 +1,6 @@
 package c;
 
-/*import java.util.Iterator;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Directory extends AbstractFile {
@@ -19,8 +19,4 @@ public class Directory extends AbstractFile {
         }
         return ret;
     }
-}*/
-
-public class Directory {
-
 }

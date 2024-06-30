@@ -1,6 +1,6 @@
 package zweiunddreisig;
 
-/*public class Project {
+public class Project {
     public void linkTask(Task task) throws IllegalArgumentException {
         if (checkTask(task)) {
             tasks.add(task);
@@ -16,8 +16,4 @@ package zweiunddreisig;
             return false;
         }
     }
-}*/
-
-public class Project {
-
 }

@@ -1,6 +1,6 @@
 package zweiunddreisig;
 
-/*import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class Concert {
     private Venue venue;
@@ -27,8 +27,4 @@ public class Concert {
     public ArrayList<Artist> getlinkArtists() {
         return artists;
     }
-}*/
-
-public class Concert {
-
 }
