@@ -29,7 +29,7 @@ public class Gui extends JFrame implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        repaint();
+        //repaint();
         if (!game.isGameOver()) {
             statusField.setText("Spiel läuft! Punkte: " + game.getPoints());
         } else {
