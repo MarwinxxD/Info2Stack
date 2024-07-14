@@ -1,0 +1,68 @@
+a)
+
+CREATE TABLE Pokemon(
+	key INTEGER 		        NOT NULL AUTO-INCREMENT,
+	name VARCHAR(20) 	        NOT NULL,
+	powerLevel INTEGER 	        NOT NULL,
+	CHECK(powerLevel >= 0),
+	PRIMARY KEY(key)
+);
+
+
+
+
+b)
+
+CREATE TABLE Printer(
+	MACAdress CHAR(12)	        NOT NULL,
+	pricePerPage REAL 	        NOT NULL,
+	CHECK(pricePerPage > 0),
+	PRIMARY KEY(MACAdress)
+);
+
+CREATE TABLE PrintJob(
+	primKey INTEGER 	        NOT NULL AUTO-INCREMENT,
+	forKey INTEGER		        NOT NULL,
+	documentName VARCHAR(50)    NOT NULL,
+	numberOfCopies INTEGER	    NOT NULL,
+	CHECK(numberOfCopies >= 0),
+	PRIMARY KEY(primKey),
+	FOREIGN KEY(forKey) 	    REFERENCES Printer(MACAdress)
+);
+
+
+
+
+c)
+
+CREATE TABLE MechanicAppointment(
+	mechanic CHAR(20)		    NOT NULL,
+	appointmentDate	DATE	    NOT NULL
+);
+
+CREATE TABLE MechanicAppointmentTools(
+	Name CHAR(20)		        NOT NULL
+);
+
+
+
+
+d)
+
+CREATE TABLE Gardener(
+    forKey INTEGER              NOT NULL,
+    FOREIGN KEY(forKey)         REFERENCES contractEnd(primKey)
+);
+
+CREATE TABLE contractEnd(
+    primKey INTEGER             NOT NULL,
+	End	DATE	                NOT NULL,
+	PRIMARY KEY(primKey)
+);
+
+CREATE TABLE Plant(
+	plantType VARCHAR(6)		NOT NULL,
+    waterRequirement REAL	    NOT NULL,
+    CHECK(waterRequirement > 0),
+    CHECK (plantType IN (’TREE’, ’FLOWER’, ’BUSH’))
+);

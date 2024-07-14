@@ -1,0 +1,34 @@
+a)
+
+INSERT INTO Point (id, x,y) VALUES ( 5,0,0);
+UPDATE Circle SET radius = 10, center = 5 WHERE id = 7;
+
+
+
+
+b)
+
+DELETE FROM Customer WHERE id = 123;
+SELECT DISTINCT
+Book.id AS bookID
+INNER JOIN
+Book ON Loan.bookID = book.id
+FROM Loan
+WHERE endDate = 20.12.2017;
+
+
+
+
+c)
+
+SELECT DISTINCT
+Doctor.name AS DoctorName,
+Patient.name AS PatientName
+FROM
+Treatment
+INNER JOIN
+Doctor ON Treatment.doctorID = Doctor.id
+INNER JOIN
+Patient ON Treatment.patientID = Patient.id
+WHERE
+Treatment.diagnosis = 'Grippe';

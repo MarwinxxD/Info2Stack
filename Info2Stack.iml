@@ -41,8 +41,13 @@
       <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt8/Aufgabe32/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt9/Aufgabe34/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt9/Aufgabe35/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt10/Aufgabe37/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt10/Aufgabe38/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt10/Aufgabe39/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Uebungsblatt10/Aufgabe40/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="mysql-connector-j-8.4.0" level="project" />
   </component>
 </module>
